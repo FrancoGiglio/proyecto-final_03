@@ -1,0 +1,86 @@
+// MEDIA QUERIES
+
+@media only screen and (min-width: 768px) {
+
+    // INDEX
+    // Tour
+    // Para que aparezca la sección de Tour (de lo contrario las fechas se verían muy chicas)
+
+    .main-index{
+        width: 100%;
+        display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+            gap: 10px 10px;
+            grid-template-areas:
+                "main-index__carousel"
+                "main-index__short-news"
+                "main-index__tour"
+            ;
+
+        .main-index__tour{
+            grid-area: main-index__tour;
+                justify-self: center;
+                align-self: center;
+            display: block;
+
+            img{
+                display: flex;
+                margin: auto;
+            }
+        }
+    }
+
+    // FOOTER
+    // Redes sociales
+
+    .social-media__icon{
+        width: 32px;
+    }
+}
+
+// ==========
+
+@media only screen and (min-width: 992px) {
+
+    // HEADER
+    // Para que quede mejor el header en pantallas grandes
+
+    // Le doy aire al Logo
+    // Modificación a la class="navbar-collapse" de Bootstrap
+    .header .container-fluid .navbar-collapse{
+        padding: 0 0 0 100px;
+
+        // Menú y Tienda
+
+        .navbar-nav{
+            justify-content: center;
+        }
+
+        // =====
+
+        // Menú
+
+        .header-nav__menu{
+            width: 75%;
+
+            .header-nav__menu--item-link:hover{
+                background: $color_red;
+                background: linear-gradient(90deg, $color_red 0%, $color_dark-red 5%, $color_dark-red 95%, $color_red 100%);
+            }
+        }
+
+        // =====
+
+        // Tienda
+
+        .header-nav__shop{
+            margin: 0 0 0 0;
+
+            .header-nav__shop--item-link:hover{
+                background: $color_orange;
+                background: linear-gradient(90deg, $color_orange 0%, $color_dark-orange 5%, $color_dark-orange 95%, $color_orange 100%);
+            }
+        }
+    }
+}

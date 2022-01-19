@@ -1,0 +1,56 @@
+// FOOTER
+
+.footer {
+    grid-area: footer;
+    width: 100%;
+    background: $color_green;
+    background: linear-gradient(180deg, $color_green 0%, $color_blue 25%, $color_blue 100%);
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 10px;
+        grid-template-areas:
+            "footer__social-media"
+            "footer__legal"
+        ;
+
+    // ==========
+
+    // Redes sociales
+
+    .footer__social-media{
+        margin: 0 20px;
+        padding: 30px 0 0 0;
+        text-align: right;
+        grid-area: footer__social-media;
+            justify-self: center;
+            align-self: center;
+
+        .social-media__unordered-list{
+            list-style-type: none;
+
+            .social-media__unordered-list--item{
+                display: inline-block;
+                margin: 7.5px;
+
+                .social-media__icon{
+                    width: 24px;
+                }
+            }
+        }
+    }
+
+    // ==========
+
+    // Legales
+
+    .footer__legal{
+        padding: 0 0 20px 0;
+        color: $color_yellow;
+        text-align: center;
+        font-size: small;
+        grid-area: footer__legal;
+            justify-self: center;
+            align-self: center;
+    }
+}

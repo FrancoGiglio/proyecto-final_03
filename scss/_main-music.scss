@@ -1,0 +1,42 @@
+// MÚSICA
+
+// Discografía
+
+.discography{
+    margin: auto;
+    width: 95%;
+
+    // Álbumes de estudio
+    .studio-albums{
+        margin: 0 20px;
+        z-index: 1;
+
+        .studio-albums__card{
+            margin: 20px 20px 0 20px;
+            padding: 0 20px;
+            background-color: $color_yellow;
+            border: inset 10px $color_red;
+
+            h3{
+                padding: 20px 0;
+            }
+
+            .studio-albums__card--top{
+                display: flex;
+            }
+
+            .studio-albums__card--cover{
+                width: 160px;
+                height: 160px;
+                margin: 10px 0;
+            }
+
+            .studio-albums__card--data{
+                margin: 0 30px;
+                display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+            }
+        }
+    }
+}

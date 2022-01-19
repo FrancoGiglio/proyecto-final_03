@@ -1,0 +1,94 @@
+// INDEX
+
+.main-index{
+    width: 100%;
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 10px;
+        grid-template-areas:
+            "main-index__carousel"
+            "main-index__short-news"
+        ;
+
+    // ==========
+
+    // Carrusel de imágenes
+
+    .main-index__carousel{
+        grid-area: main-index__carousel;
+        background-color: $color_yellow;
+        border-top: 5px solid $color_yellow;
+        border-bottom: 5px solid $color_yellow;
+
+        .carousel-item{
+            // Este resplandor lo pongo en el texto dentro del carrusel, porque sino no se lee bien
+            .glow{
+                text-shadow: 1px 1px 2px black, 0 0 1em $color_orange, 0 0 0.2em $color_yellow;
+            }
+
+            a{
+                &:link{
+                    text-decoration: none;
+                    color: red;
+                }
+
+                &:visited{
+                    color: $color_yellow;
+                }
+
+                &:active{
+                    color: rgb(200, 0, 0);
+                }
+            }
+        }
+    }
+
+    // ==========
+
+    // Noticias cortas
+
+    .main-index__short-news{
+        grid-area: main-index__short-news;
+            justify-self: center;
+            align-self: center;
+
+        .main-index__short-news--articles{
+            display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: flex-start;
+
+            // Modificación a la class="card" de Bootstrap
+            .card{
+                margin: 20px;
+                background-color: $color_yellow;
+                border: inset 10px $color_red;
+
+                .card__date{
+                    font-size: 0.85rem;
+                    color: $color_gray;
+                }
+
+                .card__title{
+                    font-family: 'Prompt', sans-serif;
+                    font-size: 1.75rem;
+                    color: $color_blue;
+                }
+
+                .card__text{
+                    text-align: justify;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+
+    // ==========
+
+    // Tour
+
+    .main-index__tour{
+        display: none;
+    }
+}

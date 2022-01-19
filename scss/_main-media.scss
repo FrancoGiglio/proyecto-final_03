@@ -1,0 +1,63 @@
+// MEDIA
+
+.main-media{
+    width: 100%;
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 10px;
+        grid-template-areas:
+            "main-media__new-videos"
+            "main-media__new-photos";
+
+    // ==========
+
+    // Nuevos videos
+
+    .main-media__new-videos{
+        grid-area: main-media__new-videos;
+            justify-self: center;
+            align-self: center;
+
+        iframe{
+            display: flex;
+            margin: auto;
+        }
+    }
+
+    // ==========
+
+    // Carrusel de imágenes
+
+    .main-media__new-photos{
+        grid-area: main-media__new-photos;
+        margin: auto;
+        width: 90%;
+
+        h2{
+            text-align: center;
+        }
+
+        .main-media__new-photos--gallery{
+            display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+
+            img{
+                margin: 20px;
+                width: 450px;
+                opacity: .75;
+                border: solid 5px $color_orange;
+                transition: all 1s;
+
+                &:hover{
+                    opacity: 1;
+                    border: inset 5px $color_red;
+                    transform: scale(1.1,1.1);
+                }
+            }
+        }
+    }
+}

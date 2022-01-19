@@ -1,0 +1,121 @@
+// HEADER
+
+.header{
+    grid-area: header;
+    background: $color_blue;
+    background: linear-gradient(180deg, $color_blue 0%, $color_blue 95%, $color_green 100%);
+    position: sticky;
+        top: 0;
+    z-index: 3; // Para estár incluso sobre los botones del carrusel
+
+    // =========================
+
+    // HEADER NAVBAR
+
+    // Modificación a la class="container-fluid" de Bootstrap
+    .container-fluid{
+        display: flex;
+            justify-content: center;
+
+        // ==========
+
+        // Logo
+
+        // Modificación a la class="navbar-brand" de Bootstrap
+        .navbar-brand{
+            margin: auto;
+
+            .logo__link--text{
+                color: white;
+                font-family: 'Prompt', sans-serif;
+                font-size: 3rem;
+                text-transform: uppercase;
+                text-shadow: 0.25rem 0.25rem 0 $color_yellow;
+                text-align: center;
+            }
+
+        }
+
+        // ==========
+
+        // Botón hamburguesa
+
+        // Modificación a la class="navbar-toggler" de Bootstrap
+        .navbar-toggler{
+            border-color: transparent;
+        }
+
+        // ==========
+
+        // Menú y Tienda
+
+        // Modificación a la class="navbar-collapse" de Bootstrap
+        .navbar-collapse{
+            justify-content: space-between;
+
+            // =====
+
+            // Declaro un mixin con variables
+
+            @mixin estilo__header-nav ($central-bg, $border-bg) {
+                background: $border-bg;
+                background: linear-gradient(90deg, $border-bg 0%, $central-bg 5%, $central-bg 95%, $border-bg 100%);
+                text-align: center;
+            }
+
+            // Declaro un mixin sin variables
+
+            @mixin estilo__header-nav__item-link {
+                text-align: center;
+                font-family: 'Yellowtail', cursive;
+            }
+
+            // Declaro un mixin con variable
+
+            @mixin estilo__header-nav__item-link--hover ($hover-bg) {
+                background: $hover-bg;
+                background: linear-gradient(90deg, transparent 0%, $hover-bg 5%, $hover-bg 95%, transparent 100%);
+            }
+
+            // Menú
+
+            .header-nav__menu {
+                @include estilo__header-nav($color_red, $color_blue); // Aplico el mixin con variables
+
+                .header-nav__menu--item{
+                    margin: 0px 15px;
+
+                    .header-nav__menu--item-link{
+                        // color: white;
+                        @include estilo__header-nav__item-link; // Aplico el mixin sin variables
+                        font-size: 1.5rem;
+
+                        &:hover{
+                            @include estilo__header-nav__item-link--hover($color_dark-red); // Aplico el mixin con variable
+                        }
+                    }
+                }
+            }
+
+            // =====
+
+            // Tienda
+
+            .header-nav__shop {
+                @include estilo__header-nav($color_orange, $color_blue); // Aplico el mixin con variables
+                margin: 0 0 15px 0;
+
+                .header-nav__shop--item-link{
+                    // color: #002E3A;
+                    @include estilo__header-nav__item-link; // Aplico el mixin sin variables
+                    font-size: 1.25rem;
+
+                    &:hover{
+                        // color: white;
+                        @include estilo__header-nav__item-link--hover($color_dark-orange); // Aplico el mixin con variable
+                    }
+                }
+            }
+        }
+    }
+}
